@@ -10,7 +10,6 @@ class Settings extends Component {
     languageChange = (e) => {
         const language = e.target.value
         this.props.changeLanguage(language);
-        this.props.startFetchCurrencies(language)
     };
 
     render() {

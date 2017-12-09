@@ -10,7 +10,6 @@
 }
 
 .currencies-table-row {
-   
     &:hover {
         background-color: #00d1b2;
         cursor: pointer
@@ -25,11 +24,16 @@
 .field {
     margin-top: 50px;
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
 }
 
 .settings {
    .change-language-select {
        margin-right: 20px
    }
+}
+
+.loading-screen {
+    text-align: center;
+    margin-top: 50px;
 }
