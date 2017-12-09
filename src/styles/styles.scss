@@ -1,0 +1,35 @@
+.table {
+    tbody {
+        >tr {
+            >th,
+            td {
+                border-right: 1px solid #dbdbdb;
+            }
+        }
+    }
+}
+
+.currencies-table-row {
+   
+    &:hover {
+        background-color: #00d1b2;
+        cursor: pointer
+    }
+}
+
+.no-page-text {
+    text-align: center;
+    margin-top: 50px
+}
+
+.field {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between
+}
+
+.settings {
+   .change-language-select {
+       margin-right: 20px
+   }
+}
