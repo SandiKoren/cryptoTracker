@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { startFetchCurrencies } from './actions/getCurrencies';
+import { startFetchCurrencies } from './actions/currency';
 import AppRouter from './routes/routes';
 import configureStore from './store/store';
 

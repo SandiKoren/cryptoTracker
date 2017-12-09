@@ -1,8 +1,8 @@
 import _ from "lodash";
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { startFetchCurrencies } from "../actions/getCurrencies";
-import { changeLanguage } from "../actions/changeLanguage";
+import { startFetchCurrencies } from "../actions/currency";
+import { changeLanguage } from "../actions/language";
 import { Link } from "react-router-dom";
 
 class Settings extends Component {

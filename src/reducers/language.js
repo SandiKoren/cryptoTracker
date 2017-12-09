@@ -1,6 +1,5 @@
 import _ from "lodash";
-
-import { CHANGE_LANGUAGE } from "../actions/changeLanguage";
+import { CHANGE_LANGUAGE } from "../actions/language";
 
 const languageReducerDefaultState = {
     language: "eur"

@@ -1,5 +1,5 @@
 import _ from "lodash";
-import { FETCH_CURRENCIES } from "../actions/getCurrencies";
+import { FETCH_CURRENCIES } from "../actions/currency";
 
 const currenciesReducerDefaultState = {};
 
