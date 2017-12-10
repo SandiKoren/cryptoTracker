@@ -1,4 +1,3 @@
-import _ from "lodash";
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { startFetchCurrencies } from "../actions/currency";
@@ -14,8 +13,11 @@ class CurrenciesList extends Component {
     renderCurrencies = () => {     
         const { language } = this.props.language;
         const settingsLangPrice = `price_${language}`;
+        const { currencies } = this.props;
 
-        return _.map(this.props.currencies, currency => {
+
+        return Object.keys(currencies).map((key) => {
+            let currency = currencies[key];
             return (
                 <tr className="currencies-table-row" key = {currency.id}>
                     <th>{currency.rank}</th>

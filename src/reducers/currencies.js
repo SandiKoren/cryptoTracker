@@ -8,7 +8,6 @@ export default (state = currenciesReducerDefaultState, action) => {
          case FETCH_CURRENCY:
             return { ...state, [action.id]: action.data[0] };
         case FETCH_CURRENCIES:
-        // assigning id key to object
             return _.mapKeys(action.data, "id");
         default:
             return state;
