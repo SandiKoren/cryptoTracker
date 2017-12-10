@@ -11,7 +11,6 @@ export default () => {
             currencies: currenciesReducer,
             language: languageReducer
         }),
-        // thunk and redux chrome extension
         composeEnhancers(applyMiddleware(thunk))
     );
     return store;
