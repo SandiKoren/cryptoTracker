@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { startFetchCurrencies } from "../actions/currency";
 import { changeLanguage } from "../actions/language";
 import { Link } from "react-router-dom";
 
@@ -41,4 +40,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps, { startFetchCurrencies, changeLanguage })(Settings);
+export default connect(mapStateToProps, { changeLanguage })(Settings);

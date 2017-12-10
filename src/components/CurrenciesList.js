@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { startFetchCurrencies } from "../actions/currency";
-import { changeLanguage } from "../actions/language";
 import { Link } from "react-router-dom";
 
 class CurrenciesList extends Component {
@@ -29,12 +28,6 @@ class CurrenciesList extends Component {
             );
         });
     }
-
-    languageChange = (e) => {
-        const language = e.target.value
-        this.props.changeLanguage(language);
-        this.props.startFetchCurrencies(language)
-    };
 
     refreshCurrencies = () => {
         const { language } = this.props.language;
@@ -93,4 +86,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps, { startFetchCurrencies, changeLanguage })(CurrenciesList);
+export default connect(mapStateToProps, { startFetchCurrencies })(CurrenciesList);
