@@ -19,7 +19,7 @@ class CurrenciesList extends Component {
             return (
                 <tr className="currencies-table-row" key = {currency.id}>
                     <th>{currency.rank}</th>
-                    <td>{currency.name}</td>
+                    <td><Link to={`/currencies/${currency.id}`}>{currency.name}</Link></td>
                     <td>{currency.symbol}</td>
                     <td>{Math.round(currency[settingsLangPrice] * 100) / 100} {language.toUpperCase()}</td>
                     <td>{currency.percent_change_24h}%</td>
@@ -40,12 +40,18 @@ class CurrenciesList extends Component {
     }
 
     render() {
+        const { currencies } = this.props;
+
+        if (Object.keys(currencies).length === 0) {
+            return <div className="loading">Loading...</div>;
+        }
+
         return (
             <div className="columns is-mobile is-centered">
                 <div className="column-12">
                     <div className="field">
                         <Link to="/settings" className="button is-primary">Settings</Link>
-                        <a className="button is-primary" onClick={this.refreshCurrencies}>Refresh</a>
+                        <a className="button is-info" onClick={this.refreshCurrencies}>Refresh</a>
                     </div>
                    
                     <table className="table is-bordered">

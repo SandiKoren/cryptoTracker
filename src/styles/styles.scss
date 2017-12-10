@@ -22,18 +22,40 @@
 }
 
 .field {
-    margin-top: 50px;
     display: flex;
     justify-content: space-between;
 }
 
 .settings {
-   .change-language-select {
-       margin-right: 20px
-   }
+    .change-language-select {
+        margin-right: 20px
+    }
 }
 
 .loading-screen {
     text-align: center;
     margin-top: 50px;
+}
+
+.currency-details {
+    border: 2px solid #00d1b2;
+    padding: 50px;
+    .currency-details-text {
+        color: #00d1b2;
+        margin-right: 20px;
+    }
+}
+
+.columns {
+    margin-top: 50px;
+}
+
+.refresh-site {
+    margin-left: 30px
+}
+
+.currency-details-site {
+    .currency-details-back-button {
+        color: #FFFFFF;
+    }
 }
