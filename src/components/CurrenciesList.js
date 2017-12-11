@@ -3,15 +3,15 @@ import { connect } from 'react-redux';
 import { startFetchCurrencies } from "../actions/currency";
 import { Link } from "react-router-dom";
 
-class CurrenciesList extends Component {
+export class CurrenciesList extends Component {
     componentDidMount() {
-        const { language } = this.props.language;
-        this.props.startFetchCurrencies(language);
+        const { fiat } = this.props.fiat;
+        this.props.startFetchCurrencies(fiat);
     }  
 
     renderCurrencies = () => {     
-        const { language } = this.props.language;
-        const settingsLangPrice = `price_${language}`;
+        const { fiat } = this.props.fiat;
+        const settingsFiatPrice = `price_${fiat}`;
         const { currencies } = this.props;
 
 
@@ -22,7 +22,7 @@ class CurrenciesList extends Component {
                     <th>{currency.rank}</th>
                     <td><Link to={`/currencies/${currency.id}`}>{currency.name}</Link></td>
                     <td>{currency.symbol}</td>
-                    <td>{Math.round(currency[settingsLangPrice] * 100) / 100} {language.toUpperCase()}</td>
+                    <td>{Math.round(currency[settingsFiatPrice] * 100) / 100} {fiat.toUpperCase()}</td>
                     <td>{currency.percent_change_24h}%</td>
                 </tr>
             );
@@ -30,8 +30,8 @@ class CurrenciesList extends Component {
     }
 
     refreshCurrencies = () => {
-        const { language } = this.props.language;
-        this.props.startFetchCurrencies(language);
+        const { fiat } = this.props.fiat;
+        this.props.startFetchCurrencies(fiat);
     }
 
     render() {
@@ -46,7 +46,7 @@ class CurrenciesList extends Component {
                 <div className="column-12">
                     <div className="field">
                         <Link to="/settings" className="button is-primary">Settings</Link>
-                        <a className="button is-info" onClick={this.refreshCurrencies}>Refresh</a>
+                        <a className="button is-info button-refresh-site" onClick={this.refreshCurrencies}>Refresh</a>
                     </div>
                    
                     <table className="table is-bordered">
@@ -79,10 +79,10 @@ class CurrenciesList extends Component {
     } 
 }
 
-const mapStateToProps = ({currencies, language}) => {
+const mapStateToProps = ({currencies, fiat}) => {
     return {
          currencies,
-         language
+         fiat
     };
 };
 

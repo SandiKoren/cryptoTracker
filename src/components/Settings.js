@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { changeLanguage } from "../actions/language";
+import { changeFiat } from "../actions/fiat";
 import { Link } from "react-router-dom";
 
-class Settings extends Component {
+export class Settings extends Component {
 
-    languageChange = (e) => {
-        const language = e.target.value
-        this.props.changeLanguage(language);
+    changeFiat = (e) => {
+        const fiat = e.target.value
+        this.props.changeFiat(fiat);
     };
 
     render() {
@@ -17,8 +17,8 @@ class Settings extends Component {
                 <div className="column-12">
                     <div className="field settings">
                         <div className="control">
-                            <div className="select is-primary change-language-select">
-                                <select onChange={this.languageChange} value={this.props.language.language}>
+                            <div className="select is-primary change-fiat-select">
+                                <select onChange={this.changeFiat} value={this.props.fiat.fiat}>
                                     <option value="eur">EUR</option>
                                     <option value="usd">USD</option>
                                     <option value="cny">CNY</option>
@@ -33,11 +33,10 @@ class Settings extends Component {
     }
 }
 
-const mapStateToProps = ({currencies, language}) => {
+const mapStateToProps = ({ fiat }) => {
     return {
-        currencies,
-        language
+        fiat
     };
 };
 
-export default connect(mapStateToProps, { changeLanguage })(Settings);
+export default connect(mapStateToProps, { changeFiat })(Settings);

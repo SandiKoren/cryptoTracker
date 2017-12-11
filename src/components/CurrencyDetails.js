@@ -3,25 +3,25 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { startFetchCurrency } from "../actions/currency";
 
-class CurrencyDetails extends Component {
+export class CurrencyDetails extends Component {
     constructor(props) {
         super(props);
         const { id } = this.props.match.params;
-        const { language } = this.props.language;
+        const { fiat } = this.props.fiat;
 
-        this.props.startFetchCurrency(id, language);
+        this.props.startFetchCurrency(id, fiat);
     }
 
     renderCurrencies = () => {
         const { currency } = this.props;
-        const { language } = this.props.language;
-        const settingsLangPrice = `price_${language}`;
+        const { fiat } = this.props.fiat;
+        const settingsFiatPrice = `price_${fiat}`;
             return (
                 <div className="columns is-mobile is-centered">
                     <div className="column-12 currency-details">
                         <div><span className="currency-details-text">rank:</span> {currency.rank}</div>
                         <div><span className="currency-details-text">name:</span> {currency.name}</div>
-                        <div><span className="currency-details-text">price:</span> {Math.round(currency[settingsLangPrice] * 100) / 100} {language.toUpperCase()}</div>
+                        <div><span className="currency-details-text">price:</span> {Math.round(currency[settingsFiatPrice] * 100) / 100} {fiat.toUpperCase()}</div>
                         <div><span className="currency-details-text">symbol:</span> {currency.symbol}</div>
                         <div><span className="currency-details-text">price BTC:</span>{currency.price_btc}</div>
                         <div><span className="currency-details-text">change 1H:</span>{currency.percent_change_1h}%</div>
@@ -36,9 +36,9 @@ class CurrencyDetails extends Component {
 
     refreshCurrency = () => {
         const { id } = this.props.match.params;
-        const { language } = this.props.language;
+        const { fiat } = this.props.fiat;
 
-        this.props.startFetchCurrency(id, language);
+        this.props.startFetchCurrency(id, fiat);
     }
 
 
@@ -63,10 +63,10 @@ class CurrencyDetails extends Component {
     }
 }
 
-function mapStateToProps({currencies, language}, ownProps) {
+function mapStateToProps({currencies, fiat}, ownProps) {
     return { 
         currency: currencies[ownProps.match.params.id],
-        language
+        fiat
     };
 }
 

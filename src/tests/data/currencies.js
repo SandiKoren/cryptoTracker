@@ -1,0 +1,42 @@
+export default {
+    bitcoin: {
+        id: "bitcoin",
+        name: "Bitcoin",
+        symbol: "BTC",
+        rank: "1",
+        price_usd: "16595.2",
+        price_btc: "1.0",
+        "24h_volume_usd": "12833700000.0",
+        market_cap_usd: "277709470240",
+        available_supply: "16734325.0",
+        total_supply: "16734325.0",
+        max_supply: "21000000.0",
+        percent_change_1h: "-0.42",
+        percent_change_24h: "10.83",
+        percent_change_7d: "45.45",
+        last_updated: "1513001353",
+        price_eur: "14065.7762112",
+        "24h_volume_eur": "10877600279.7",
+        market_cap_eur: "235381270495"
+    },
+    ethereum: {
+        id: "ethereum",
+        name: "ethereum",
+        symbol: "ETH",
+        rank: "2",
+        price_usd: "1337",
+        price_btc: "0.5",
+        "24h_volume_usd": "50",
+        market_cap_usd: "100000",
+        available_supply: "2500",
+        total_supply: "24",
+        max_supply: "22132323",
+        percent_change_1h: "100",
+        percent_change_24h: "1000",
+        percent_change_7d: "10000",
+        last_updated: "1513001353",
+        price_eur: "1337",
+        "24h_volume_eur": "12345678",
+        market_cap_eur: "123456789"
+    }
+}

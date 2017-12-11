@@ -11,8 +11,8 @@ export const fetchCurrencies = (data) => ({
     data
 });
 
-export const startFetchCurrencies = (language) => {
-    const request = `${ROOT_URL}/?${LIMIT}&convert=${language}`;
+export const startFetchCurrencies = (fiat) => {
+    const request = `${ROOT_URL}/?${LIMIT}&convert=${fiat}`;
     
     return (dispatch) => {
         return axios.get(request).then(({data}) => {
@@ -27,8 +27,8 @@ export const fetchCurrency = (data, id) => ({
     id
 });
 
-export const startFetchCurrency = (id, language) => {
-    const request = `${ROOT_URL}/${id}/?convert=${language}`;
+export const startFetchCurrency = (id, fiat) => {
+    const request = `${ROOT_URL}/${id}/?convert=${fiat}`;
 
     return (dispatch) => {
         return axios.get(request).then(({ data }) => {
