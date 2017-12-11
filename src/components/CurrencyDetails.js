@@ -66,7 +66,7 @@ class CurrencyDetails extends Component {
 function mapStateToProps({currencies, language}, ownProps) {
     return { 
         currency: currencies[ownProps.match.params.id],
-        language: language
+        language
     };
 }
 

@@ -79,10 +79,10 @@ class CurrenciesList extends Component {
     } 
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({currencies, language}) => {
     return {
-         currencies: state.currencies,
-         language: state.language
+         currencies,
+         language
     };
 };
 
