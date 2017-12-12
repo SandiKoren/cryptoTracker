@@ -17,6 +17,8 @@ export const startFetchCurrencies = (fiat) => {
     return (dispatch) => {
         return axios.get(request).then(({data}) => {
             dispatch(fetchCurrencies(data));
+        }).catch((error) => {
+            alert('Error while fetching currencies: ' + error.message)
         })
     }
 }
@@ -33,6 +35,8 @@ export const startFetchCurrency = (id, fiat) => {
     return (dispatch) => {
         return axios.get(request).then(({ data }) => {
             dispatch(fetchCurrency(data, id));
+        }).catch((error) => {
+            alert('Error while fetching currency: ' + error.message)
         })
     }
 }
