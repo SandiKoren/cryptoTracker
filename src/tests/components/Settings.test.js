@@ -27,6 +27,6 @@ test('should change fiat', () => {
     wrapper.find('select').simulate('change', {
         target: { value }
     });
+    expect(changeFiat).toHaveBeenCalled();
     expect(changeFiat).toHaveBeenCalledWith(value);
-
 });

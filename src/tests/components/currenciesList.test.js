@@ -28,5 +28,5 @@ test('should render Currencies list with currencies', () => {
 test('should refresh currencies', () => {
     wrapper.find('a').simulate('click');
     expect(startFetchCurrencies).toHaveBeenCalled();
-    
+    expect(startFetchCurrencies).toHaveBeenCalledWith(fiat.fiat);
 });
